@@ -6,6 +6,8 @@ import { VStack, Heading, Box, LinkOverlay, LinkBox } from "@chakra-ui/layout";
 import { Text, Button } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import ReadERC20 from "components/ReadERC20";
+import TransferERC20 from "components/TransferERC20";
 
 declare let window: any;
 
@@ -108,6 +110,24 @@ const Home: NextPage = () => {
             Task 2
           </Heading>
           <Text>DAPP with React/NextJS/Chakra</Text>
+        </Box>
+        <Box mb={0} p={4} w="100%" borderWidth="1px" borderRadius="lg">
+          <Heading my={4} fontSize="xl">
+            Read ClassToken Info
+          </Heading>
+          <ReadERC20
+            addressContract="0x5FbDB2315678afecb367f032d93F642f64180aa3"
+            currentAccount={currentAccount}
+          />
+        </Box>
+        <Box mb={0} p={4} w="100%" borderWidth="1px" borderRadius="lg">
+          <Heading my={4} fontSize="xl">
+            Transfer Classtoken
+          </Heading>
+          <TransferERC20
+            addressContract="0x5FbDB2315678afecb367f032d93F642f64180aa3"
+            currentAccount={currentAccount}
+          />
         </Box>
 
         <LinkBox my={4} p={4} w="100%" borderWidth="1px" borderRadius="lg">
